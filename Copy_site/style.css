@@ -1,0 +1,131 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+html {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  line-height: 1.5;
+}
+
+
+.container {
+  max-width: 1536px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+header {
+  padding: 1rem 0;
+  text-align: center;
+  margin-top: 1.5em;
+}
+header .logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  
+}
+
+
+#central {
+  padding: 4rem 0;
+  text-align: center;
+}
+#welcome,
+.welcome {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 2fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+
+.card {
+  display: block;                
+  width: 100%;
+  max-width: 280px;
+  background: #111;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+}
+
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+}
+.wrapper img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent 50%);
+  pointer-events: none;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: #222;
+}
+.title span {
+  font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.title button {
+  background: #4F46E5;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+.title button:hover {
+  background: #3730A3;
+}
+
+footer {
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #888;
+}

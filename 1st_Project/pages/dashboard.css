@@ -1,0 +1,103 @@
+:root {
+  --bg:             #375353;
+  --bar-fill:       rgb(46,75,75);
+  --bar-border:     darkslategrey;
+  --bar-thick:      60px;
+  --bar-length:     300px;
+  --bar-radius:     calc(var(--bar-thick)/2);
+  --border-size:    8px;
+  --logo-size:      60px;
+  --breathing:      40px;      /* extra space around everything */
+  --link-gap:       1.5rem;
+  --link-color:     black;
+  --link-hover:     #487cc4;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+}
+
+.layout {
+  position: relative;
+  /* give room for shadows and the K-leg */
+  padding: var(--breathing);
+  /* size enough to contain both bars + half-logo + breathing */
+  width: calc(var(--bar-length) + var(--logo-size)/2 + var(--breathing)*2);
+  height: calc(var(--bar-length) + var(--logo-size)/2 + var(--breathing)*2);
+}
+
+/* ─── 1) CORNER LOGO ───────────────────────────────── */
+.corner-logo {
+  position: absolute;
+  top: var(--breathing);
+  left: var(--breathing);
+  width: var(--logo-size);
+  height: var(--logo-size);
+  z-index: 4;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.corner-logo:hover {
+  transform: scale(1.05);
+}
+
+/* ─── 2+3) NEUMORPHIC BARS ───────────────────────── */
+.bar {
+  position: absolute;
+  background: var(--bar-fill);
+  border: var(--border-size) solid var(--bar-border);
+  border-radius: var(--bar-radius);
+  box-shadow:
+    -4px -4px 20px #405f5f,
+     4px  4px 24px #223232,
+    inset 0 2px 10px rgba(0,0,0,0.12),
+    inset 0 -2px 6px rgba(255,255,255,0.04);
+  z-index: 1;
+}
+
+/* Horizontal nav */
+.bar--horizontal {
+  top: calc(var(--breathing));
+  left: calc(var(--breathing) + var(--logo-size)/2);
+  width: var(--bar-length);
+  height: var(--bar-thick);
+  display: flex;
+  align-items: center;
+  gap: var(--link-gap);
+  padding: 0 2rem 0 calc(var(--logo-size)/2 + var(--link-gap));
+  box-sizing: border-box;
+}
+
+/* Vertical sidebar */
+.bar--vertical {
+  top: calc(var(--breathing) + var(--logo-size)/2);
+  left: calc(var(--breathing));
+  width: var(--bar-thick);
+  height: var(--bar-length);
+}
+
+/* Links */
+.bar--horizontal a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--link-color);
+  transition: color 0.2s, transform 0.2s;
+}
+.bar--horizontal a:hover {
+  color: var(--link-hover);
+  transform: scale(1.05);
+}
+
+/* ─── 4) CUT-OUT TRIANGLE ───────────────────────── */
+.cutout {
+  position: absolute;
+  top: calc(var(--breathing) + var(--logo-size)/2 - var(--border-size)/2);
+  left: calc(var(--breathing) + var(--logo-size)/2 - var(--border-size)/2);
+  width: calc(var(--bar-thick) + var(--border-size));
+  height: calc(var(--bar-thick) + var(--border-size));
+  background: var(--bg);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  z-index: 2;
+}

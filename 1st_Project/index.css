@@ -1,0 +1,70 @@
+body {
+    background-color: darkslategrey;
+    margin: auto;
+    font-family: Copperplate, "Copperplate Gothic Light", fantasy;}
+
+.nav-bars {
+  position: relative;
+  padding-left: 55px;
+  padding-top: 55px;
+}
+
+
+.nav {
+  display: inline-flex;
+  flex-direction: row;
+  border-radius: 5rem;
+  box-shadow:
+    -4px -4px 20px 0 #405f5f,
+    4px 4px 24px 0 #223232,
+    0 2px 10px 0 rgba(0,0,0,0.12) inset,
+    0 -2px 6px 0 rgba(255,255,255,0.04) inset;
+  padding: 0.5rem;
+  align-items: center;
+  gap: 2rem;
+  border: 1px solid darkslategrey;
+  background-color: rgb(46, 75, 75);
+  z-index: 1;
+}
+
+
+.nav--vertical {
+
+  display: inline-flex;
+  flex-direction: column;
+  border-radius: 5rem;
+  gap: 2rem;
+  padding: 0.5rem;
+  align-items: center;
+  box-shadow:
+    -4px -4px 20px 0 #405f5f,
+    4px 4px 24px 0 #223232,
+    0 2px 10px 0 rgba(0,0,0,0.12) inset,
+    0 -2px 6px 0 rgba(255,255,255,0.04) inset;
+  border: 1px solid darkslategrey;
+  background-color: rgb(46, 75, 75);
+  position: absolute;
+  top: 55px;
+  left: 55px;
+  z-index: -1;
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 25px;
+  color: black;
+}
+.bot-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.nav a:hover {
+  transform: scale(1.1);
+}
+
