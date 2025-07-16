@@ -11,7 +11,7 @@ let firstChar = fullName.slice(0, 1);
 let lastChar = fullName.slice(-1);
 */
 
-
+let firstName = 
 
 console.log(firstName);
 console.log(lastName);
