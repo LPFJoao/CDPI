@@ -1,6 +1,3 @@
-// NULBER GUESSING GAME
-// This is a simple number guessing game where the user has to guess a number between 1 and 100.
-
 
 const minNum = 1;
 const maxNum = 100;
